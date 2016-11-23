@@ -1,0 +1,61 @@
+<div id="home">
+
+<H1 class="main_title">Breakaway Blog 2.0</H1>
+
+<img class="logo" src="logo.jpg" />
+ 
+<div id="signup"> 
+<h1 id="buttons_h1"><a class="btn_link" href="/users/new">Signup</a></h1>
+ 
+<h1 id="buttons_h1"><a class="btn_link" href="/login"> Login </a></h1>
+
+  <%if flash[:update]%>
+  <h1><%=flash[:update]%></h1>
+  <%end%>
+</div>
+
+<script>
+var email = ""; 
+var user = "";
+var pass = "";
+$(document).ready(function(){
+  $("#e").keyup(function(){
+            email = $(this).val();
+            console.log(email);
+        });
+  $("#u").keyup(function(){
+            user = $(this).val();
+            console.log(user);
+        });
+  $("#p").keyup(function(){
+            pass = $(this).val();
+            console.log(pass);
+        });
+  function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+  }
+  function isUser(username) {
+ var regex = /^[a-z][\w\.]{0,15}$/i;
+  return regex.test(user);
+  }
+  function isPass(password) {
+  var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+  return regex.test(password);
+  }
+  $("#s").submit(function(event) {
+  var checkemail = isEmail(email);
+  if(checkemail == false) {
+  alert("incorrect email")
+  event.preventDefault();}
+  var checkuser = isUser(user);
+  if(checkuser == false) {
+  alert("incorrect username");
+  event.preventDefault();}
+  var checkpass = isPass(pass);
+  if(checkpass == false) {
+alert("password must be at least 6 characters, contain one numeric digit, one uppercase letter, and one lowercase letter");
+event.preventDefault();}
+  });
+});
+</script>

@@ -1,0 +1,10 @@
+<h2 id="style_h2"><%= @message %></h2>
+
+<br>
+<h3>
+<% @users.each do |user| %>
+	<%= user.id %>.
+	<%= user.firstname %><br>
+	<%= user.lastname %><br><br>
+<% end %>
+</h3>

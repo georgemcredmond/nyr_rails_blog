@@ -1,0 +1,17 @@
+<h2 id="style_h2"><%= @message %></h2>
+
+<h3>
+<%= form_for User.new do |f| %>
+	<%= f.label :firstname %>:
+	<%= f.text_field :firstname %> <br><br>
+	<%= f.label :lastname %>:
+	<%= f.text_field :lastname %> <br><br>
+	<%= f.label :username %>:
+	<%= f.text_field :username %> <br><br>
+	<%= f.label :password %>:
+	<%= f.text_field :password %><br><br>
+	<%= f.label :favorite_player %>:
+	<%= f.text_field :favorite_player %><br><br><br>
+	<%= f.submit %>
+</h3>
+<% end %>
