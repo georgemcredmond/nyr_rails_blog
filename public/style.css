@@ -133,7 +133,7 @@ nav a#pull {
 	color: red;
 	text-decoration: none;
 }
-.btn_link<a:hover {
+.btn_link > a:hover {
     text-decoration: underline;
 }
 #buttons_h1 {
